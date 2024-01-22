@@ -10,6 +10,7 @@ import {
   Timestamp,
   onSnapshot,
 } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -35,6 +36,8 @@ getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore(app);
 
+const storage = getStorage(app);
+
 export {
   db,
   doc,
@@ -45,4 +48,5 @@ export {
   signInWithPopup,
   Timestamp,
   onSnapshot,
+  storage,
 };

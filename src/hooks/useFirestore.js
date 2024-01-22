@@ -23,7 +23,6 @@ const useFirestore = (nameCollection, condition) => {
         id: doc.id,
       }));
       setDocs(data);
-      console.log(data);
     });
 
     return () => {
