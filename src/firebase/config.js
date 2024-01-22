@@ -21,17 +21,16 @@ const providerEmail = new GoogleAuthProvider();
 providerEmail.addScope("https://www.googleapis.com/auth/contacts.readonly");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAHGw7sDJQ2s8obHqEtxLqw-J3oBukOcK4",
-  authDomain: "chat-app-18909.firebaseapp.com",
-  projectId: "chat-app-18909",
-  storageBucket: "chat-app-18909.appspot.com",
-  messagingSenderId: "430825524211",
-  appId: "1:430825524211:web:d5ab5a4fdc37090d796086",
-  measurementId: "G-91ZH52TETH",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_NAME_PROJECT,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+// Initialize Firebase
 getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore(app);
